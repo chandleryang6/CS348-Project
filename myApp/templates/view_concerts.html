@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Concerts</title>
+    <style>
+        /* Reuse the styles from your homepage */
+        table {
+            width: 100%; 
+            border-collapse: collapse;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        /* Add more styles here if needed */
+    </style>
+
+
+ <!-- Include jQuery -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ <!-- Include jQuery UI -->
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+
+    <!-- Simple navigation bar -->
+    <nav>
+        <a href="{% url 'home' %}">Home</a> | 
+        <a href="{% url 'view_concerts' %}">View Concerts</a>
+    </nav>
+
+
+    <h1>Concerts</h1>
+
+    <form method="get" action="{% url 'view_concerts' %}">
+        <!-- Concert Type/Description Filter -->
+        <label for="description">Concert Type:</label>
+        <select id="description" name="description">
+            <option value="">Select Type</option>
+            {% for description in descriptions %}
+                <option value="{{ description }}">{{ description }}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- Date Range Filter -->
+        <label for="start_date">Start Date:</label>
+        <input type="text" id="start_date" name="start_date"><br>
+
+        <label for="end_date">End Date:</label>
+        <input type="text" id="end_date" name="end_date"><br>
+
+        <!-- Filter Button -->
+        <input type="submit" value="Filter">
+    </form>
+
+    <!-- Display List of Concerts as a Table -->
+    <table>
+        <!-- Table Headers -->
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Artist</th>
+                <th>Venue</th>
+            </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+            {% for concert in concerts %}
+            <tr>
+                <td>{{ concert.date }}</td> 
+                <td>{{ concert.time }}</td>
+                <td>{{ concert.artist.name }}</td>
+                <td>{{ concert.venue }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No concerts available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+<script>
+    $(document).ready(function() {
+        $('#start_date').datepicker({ dateFormat: 'mm/dd/yy' });
+        $('#end_date').datepicker({ dateFormat: 'mm/dd/yy' });
+    });
+</script>
+</body>
+</html>
