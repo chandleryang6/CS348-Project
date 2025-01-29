@@ -3,7 +3,7 @@ This project is a web-based Concert Management System, inspired by platforms lik
 
 ## Features
 - ### Artist Management:
--- Add, view, and delete artists.
+  - Add, view, and delete artists.
 - ### Concert Management:
 - Create, view, edit, and delete concert entries.
 - ### Dynamic Dropdown Menus:
