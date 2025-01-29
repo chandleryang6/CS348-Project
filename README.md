@@ -48,6 +48,17 @@ This project is a web-based Concert Management System, inspired by platforms lik
   
   - Updates dynamically as new artists are added to the database.
 
+## Demo Walkthrough
+1. Adding Artists:
+  - Use the "Add Artist" form to input artist details.
+  - Save the entry, and the dropdown menu is dynamically updated with the new artist.
+2. Creating Concerts:
+  - Enter concert details, including the associated artist (selected from the dropdown menu).
+  - Save the entry, and the concert details are inserted into the database and displayed in the table.
+3. Editing and Deleting Entries:
+  - Modify concert or artist details, and updates are saved to the database.
+  - Delete entries directly, with cascade deletions ensuring database consistency.
+
 ## Installation & Setup
 ### Prerequisites
 - Python 3.8 or higher
@@ -92,7 +103,10 @@ python manage.py runserver
 
 http://127.0.0.1:8000
 
-
+## Technologies Used
+- Backend: Django (Python), Django ORM
+- Frontend: HTML, CSS
+- Database: SQLite (default Django database)
 
 
 
