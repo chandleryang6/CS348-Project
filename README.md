@@ -14,6 +14,13 @@ This project is a web-based Concert Management System, inspired by platforms lik
   - Deleting an artist automatically removes all associated concerts.
 
 ## Project Structure
+
+The primary application logic for this project is located in the myApp folder. This includes the following key files:
+- models.py: Defines the database models for artists and concerts.
+- views.py: Contains the view functions to handle user input and process database interactions.
+- forms.py: Handles form definitions for adding artists and concerts.
+- templates/: Contains HTML files, including dynamic elements for dropdown menus.
+- admin.py: Registers models to appear in the Django admin interface.
 ### 1. Models (models.py)
 - #### Artist Model:
   - Fields: name (artist name) and description.
