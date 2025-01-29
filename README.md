@@ -14,7 +14,7 @@ This project is a web-based Concert Management System, inspired by platforms lik
   - Deleting an artist automatically removes all associated concerts.
 
 ## Project Structure
-1. Models (models.py)
+## 1. Models (models.py)
 - ### Artist Model:
   - Fields: name (artist name) and description.
   - Represents artists and is displayed in the Django admin interface.
