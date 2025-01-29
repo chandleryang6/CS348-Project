@@ -48,7 +48,49 @@ This project is a web-based Concert Management System, inspired by platforms lik
   
   - Updates dynamically as new artists are added to the database.
 
+## Installation & Setup
+### Prerequisites
+- Python 3.8 or higher
+- Django 5.1.5
+- Virtual Environment (recommended)
 
+### Steps
+1. Clone the Repository:
+
+```bash
+git clone <repository_url>
+cd project_directory
+```
+
+2. Set Up a Virtual Environment:
+
+```bash
+python3 -m venv myvenv
+source myvenv/bin/activate
+```
+
+3. Install Dependencies:
+
+``` bash
+pip install django
+```
+
+4. Apply Migrations:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+5. Run the Development Server:
+
+```bash
+python manage.py runserver
+```
+
+6. Access the Application: Open your browser and go to:
+
+http://127.0.0.1:8000
 
 
 
