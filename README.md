@@ -58,7 +58,7 @@ This project is a web-based Concert Management System, inspired by platforms lik
 1. Clone the Repository:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/chandleryang6/CS348-Project.git
 cd project_directory
 ```
 
